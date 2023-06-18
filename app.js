@@ -1,4 +1,5 @@
 const express = require('express');
+const livros = require('./livros')
 const app = express();
 const PORT = 3001;
 
@@ -26,6 +27,7 @@ app.get("/transfere",log,(req,res)=>{
   res.send("OK! Valor transferido com sucesso!")
 })
 
+app.use('/livros',livros);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando em: http://localhost:${PORT}`)
